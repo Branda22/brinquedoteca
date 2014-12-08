@@ -1,24 +1,13 @@
-
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Welcome to your Rails project on Cloud9 IDE!
-
-To get started, just do the following:
-
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://brinquedoteca-branda22.c9.io/).
-
-Happy coding!
-The Cloud9 IDE team
+#    ____       _                            _       _                 
+#   |  _ \     (_)                          | |     | |                
+#   | |_) |_ __ _ _ __   __ _ _   _  ___  __| | ___ | |_ ___  ___ __ _ 
+#   |  _ <| '__| | '_ \ / _` | | | |/ _ \/ _` |/ _ \| __/ _ \/ __/ _` |
+#   | |_) | |  | | | | | (_| | |_| |  __/ (_| | (_) | ||  __/ (_| (_| |
+#   |____/|_|  |_|_| |_|\__, |\__,_|\___|\__,_|\___/ \__\___|\___\__,_|
+#                          | |                                         
+#                          |_|                                         
 
 
-## Support & Documentation
+Brinquedoteca is a toy inventory system developed to aid parents and therapists of children with special needs 
+to classify toys so that special education professionals can select the best toy for therapy. 
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
