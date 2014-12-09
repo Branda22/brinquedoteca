@@ -15,21 +15,35 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
+  
   def show
     @user = User.find(params[:id])
     @toys = @user.toys.all
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update 
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile successfuly updated"
+      redirect_to @user
+    else
+      flash.now[:alert] = "Something is wrong"
+      render 'edit'
+    end
+  end
+  
   def index
     @user = User.all
   end
 
   def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to root_url
   end
   
   private

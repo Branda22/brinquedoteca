@@ -11,6 +11,11 @@
                <% @toys.each do |toy| %>
                <table>
                    <thead>
+                        <p id="tiny">
+                          created <%= time_ago_in_words(toy.created_at) %> ago 
+                          <%= link_to "edit toy", edit_user_toy_path(@user, toy) %>
+                          <%= link_to "delete toy", user_toy_path(@user, toy), method: :delete %>
+                        </p>
                        <tr>
                            <th>ID</th>
                            <th>Name</th>
@@ -25,9 +30,10 @@
                           <td><%= toy.manufacturer%></td>
                           <td><%= toy.category %></td> 
                        </tr>
-                       
+                        
                    </tbody>
                </table>
+               
                <% end %>
             <% else %>
                 <h3>You have no toys saved</h3>

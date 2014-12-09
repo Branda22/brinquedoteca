@@ -18,15 +18,26 @@ class ToysController < ApplicationController
   end
 
   def edit
+    @toy = @user.toys.find(params[:id])
   end
 
   def update
+    @toy = @user.toys.find(params[:user_id])
+    if @toy.update_attributes(toy_params)
+      flash[:success] = "Toy updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   def index
   end
 
-  def delete
+  def destroy
+    @toy = @user.toys.find(params[:user_id]).destroy
+    flash[:success] = "Toy deleted"
+    redirect_to @user
   end
   
   private
