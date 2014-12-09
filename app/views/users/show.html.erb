@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="large-6 columns">
+       <h4>Welcome back! <%= @user.name %></h4>
+       
+       <%= link_to "Add new toy", new_user_toy_path(@user), class: 'button' %>
+    </div>
+    <div class="large-6 columns">
+        <div class="panel">
+            <% if @toys.any? %>
+               <h4>Your toys</h4>
+               <% @toys.each do |toy| %>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>ID</th>
+                           <th>Name</th>
+                           <th>Category</th>
+                           <th>Manufacturer</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                          <td><%= toy.id %></td>
+                          <td><%= toy.name %></td>
+                          <td><%= toy.manufacturer%></td>
+                          <td><%= toy.category %></td> 
+                       </tr>
+                       
+                   </tbody>
+               </table>
+               <% end %>
+            <% else %>
+                <h3>You have no toys saved</h3>
+            <% end %>
+        </div>
+    </div>
+</div>

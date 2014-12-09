@@ -1,0 +1,16 @@
+<div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+              <h1 id="bar-title"><%= link_to "Brinquedoteca", root_path %></h1>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="right">
+                <%= link_to "Profile", user_path(current_user), class: "button" %>
+                <%= link_to "Edit information", edit_user_path(current_user), class: 'button' %>
+                <%= link_to "log out", log_out_path, class: "button" %>
+            </ul>
+        </section>
+    </nav>
+</div>

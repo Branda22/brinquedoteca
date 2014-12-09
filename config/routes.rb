@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  root 'stationary_pages#index'
+  get 'about' => 'stationary_pages#about'
+  get 'contact' => 'stationary_pages#contact'
+  get 'log_out' => 'sessions#destroy'
+
+  resources :users do
+    resources :toys
+  end
+  
+  resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
