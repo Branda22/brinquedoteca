@@ -16,4 +16,4 @@
 /tmp
 
 # ignore cloud9 IDE files
-/.c9/metadata/tab16
+* .c9/metadata/tab16
