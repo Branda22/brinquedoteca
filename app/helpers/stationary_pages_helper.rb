@@ -1,0 +1,2 @@
+module StationaryPagesHelper
+end
