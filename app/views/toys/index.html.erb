@@ -20,6 +20,7 @@
                 <tr>
                     <td colspan="5">
                         <p id="tiny">Created by: <%= user.name %> | <%= time_ago_in_words(toy.created_at) %> ago.</p>
+                        <%= link_to "view toy", toy_path(toy), class: "button tiny" %>
                         <% if current_user.id == toy.user_id %> 
                             <%= link_to "delete toy", user_toy_path(current_user, toy), method: :delete, class: "button alert tiny" %>
                         <% end %>

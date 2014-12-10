@@ -17,8 +17,10 @@
                 </tr>
             </tbody>
         </table>
-        <%= link_to "edit toy", edit_user_toy_path(current_user, @toy), class: "button tiny" %>
-        <%= link_to "delete toy", user_toy_path(current_user, @toy), method: :delete, class: "button alert tiny" %>
+        <% if current_user.id == @toy.user_id %>
+            <%= link_to "edit toy", edit_user_toy_path(current_user, @toy), class: "button tiny" %>
+            <%= link_to "delete toy", user_toy_path(current_user, @toy), method: :delete, class: "button alert tiny" %>
+        <% end %>
     </div>
 </div>
 

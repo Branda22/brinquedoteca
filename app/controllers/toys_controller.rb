@@ -1,6 +1,6 @@
 class ToysController < ApplicationController
   before_action :logged_in?, only: [:create, :destroy]
-  before_action :get_toy, only: [:show, :edit, :update]
+  before_action :get_toy, only: [:edit, :update]
   
   def new
     @toy = current_user.toys.build
@@ -15,7 +15,8 @@ class ToysController < ApplicationController
   end
 
   def show
-    
+    #Gets a toy to display in the show page.
+    @toy = Toy.find_by(id: params[:id])
   end
 
   def edit
