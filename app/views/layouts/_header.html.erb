@@ -7,9 +7,12 @@
         </ul>
         <section class="top-bar-section">
             <ul class="right">
+                <% if logged_in? %>
                 <%= link_to "Profile", user_path(current_user), class: "button" %>
-                <%= link_to "Edit information", edit_user_path(current_user), class: 'button' %>
-                <%= link_to "log out", log_out_path, class: "button" %>
+                <%= link_to "Settings", edit_user_path(current_user), class: 'button' %>
+                <%= link_to "Toy index", user_toys_path(current_user), class: 'button' %>
+                <%= link_to "log out", log_out_path, class: "button alert" %>
+                <% end %>
             </ul>
         </section>
     </nav>

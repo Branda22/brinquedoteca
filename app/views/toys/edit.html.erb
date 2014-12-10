@@ -1,6 +1,6 @@
 <div class="row">
     <div class="small-6 large-centered columns">
-        <%= form_for([@user, @toy]) do |f| %>
+        <%= form_for([current_user, @toy], html: { multipart: true }) do |f| %>
          <%= f.label :name %>
          <%= f.text_field :name %>
          
@@ -9,6 +9,9 @@
          
          <%= f.label :category %>
          <%= f.select :category, options_for_select(%w[Educational Therapeutic Recreational Other]) %>
+         
+         <%= f.label :image %>
+         <%= f.file_field :image %>
          
          <%= f.submit "Update toy", class: 'button' %>
          <% end %>

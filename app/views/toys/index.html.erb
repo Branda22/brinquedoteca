@@ -1,2 +1,33 @@
-<h1>Toys#index</h1>
-<p>Find me in app/views/toys/index.html.erb</p>
+<div class="row">
+    <div class="small-6 large-centered columns">
+        <h1>Toy index (<%= @toys.count %>)</h1>
+        <% @toys.each do |toy| %>
+        <% user = User.find_by(id: toy.user_id) %>
+        <table>
+            <thead>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= image_tag toy.image.url, class: "th" %></td>
+                    <td><%= toy.name %></td>
+                    <td><%= toy.manufacturer %></td>
+                    <td><%= toy.category %></td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <p id="tiny">Created by: <%= user.name %> | <%= time_ago_in_words(toy.created_at) %> ago.</p>
+                        <% if current_user.id == toy.user_id %> 
+                            <%= link_to "delete toy", user_toy_path(current_user, toy), method: :delete, class: "button alert tiny" %>
+                        <% end %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <% end %>
+    </div>
+</div>

@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    @toys = @user.toys.all
+    #only shows the toys that are owned by the current user.
+    @toys = current_user.toys.all
   end
 
   def edit

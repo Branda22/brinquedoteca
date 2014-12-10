@@ -1,20 +1,30 @@
+<% provide(:title, "Brinquedoteca") %>
 <div class="row">
   <div class="large-12 columns">
-    <div class="panel">
-      <h1>Brinquedoteca</h1>
+    <div>
+      <h1 id="main_title">Brinquedoteca</h1>
     </div>
   </div>
 </div>
 <div class="row">
     <div class="large-6 columns">
-        <%= link_to "Sign Up", new_user_path, class: "button [tiny small large]" %>
-        <%= link_to "Login", new_session_path, class: "button [tiny small large]" %>  
+        <%= link_to "Sign Up", new_user_path, class: "button large" %>
+        <%= link_to "Login", new_session_path, class: "button large" %>  
     </div>
     <div class="large-6 columns">
       <div class="panel">
         <h1>Welcome!</h1>
-        <p>Brinquedoteca is a web based open source toy inventory system for special education professionals.</p>
+        <p>Brinquedoteca is a web based, open source toy inventory system for special education professionals.</p>
       </div>
     </div>
-</div>    
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <nav class="breadcrumbs">
+      <li>Developed by: Christian Machado Brandalise</li>
+      <li><%= link_to "About", "#" %></li>
+      <li><%= link_to "Contact", "#" %></li>
+    </nav>
+  </div>
+</div>
     

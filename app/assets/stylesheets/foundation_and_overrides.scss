@@ -1445,6 +1445,13 @@ $include-html-global-classes: $include-html-classes;
     padding-left: 10px;
 }
 
+#main_title {
+    font-family: helvetica;
+    font-size: 100px;
+    color: #00376e;
+    text-shadow: 5px 5px 0px #eee, 7px 7px 0px #008cba;
+}
+
 .fullWidth {
    width: 100%;
    margin-left: auto;

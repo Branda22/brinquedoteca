@@ -1,42 +1,46 @@
 <div class="row">
     <div class="large-6 columns">
-       <h4>Welcome back! <%= @user.name %></h4>
+       <h4>Welcome back <%= current_user.name %>!</h4>
        
-       <%= link_to "Add new toy", new_user_toy_path(@user), class: 'button' %>
+       <%= link_to "Add new toy", new_user_toy_path(current_user), class: 'button' %>
+       <%= link_to "View all toys", user_toys_path(current_user), class: 'button' %>
     </div>
     <div class="large-6 columns">
-        <div class="panel">
+        <div>
             <% if @toys.any? %>
                <h4>Your toys</h4>
                <% @toys.each do |toy| %>
                <table>
                    <thead>
-                        <p id="tiny">
-                          created <%= time_ago_in_words(toy.created_at) %> ago 
-                          <%= link_to "edit toy", edit_user_toy_path(@user, toy) %>
-                          <%= link_to "delete toy", user_toy_path(@user, toy), method: :delete %>
-                        </p>
+                        
                        <tr>
+                           <th width="150">Image</th>
                            <th>ID</th>
                            <th>Name</th>
-                           <th>Category</th>
                            <th>Manufacturer</th>
+                           <th>Category</th>
                        </tr>
                    </thead>
                    <tbody>
                        <tr>
+                          <td><%= image_tag toy.image.url, class: "th" %></td>
                           <td><%= toy.id %></td>
                           <td><%= toy.name %></td>
                           <td><%= toy.manufacturer%></td>
                           <td><%= toy.category %></td> 
                        </tr>
-                        
+                       <tr>
+                           <td colspan="5">
+                              <p id="tiny">created <%= time_ago_in_words(toy.created_at) %> ago. </p>
+                              <%= link_to "edit toy", edit_user_toy_path(current_user, toy), class: "button tiny" %>
+                              <%= link_to "delete toy", user_toy_path(current_user, toy), method: :delete, class: "button alert tiny" %> 
+                           </td>
+                       </tr>
                    </tbody>
                </table>
-               
                <% end %>
             <% else %>
-                <h3>You have no toys saved</h3>
+                <h3>You currently have no toys</h3>
             <% end %>
         </div>
     </div>

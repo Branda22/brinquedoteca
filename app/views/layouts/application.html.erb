@@ -12,9 +12,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= render 'layouts/header' %>
-    <% end %>
+    <%= render 'layouts/header' %>
     <%= render 'layouts/flash' %>
       <%= yield %>
       <%= javascript_include_tag "application" %>

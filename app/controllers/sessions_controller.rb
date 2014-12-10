@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
         log_in(user)
         redirect_to user
       else
-        flash.now[:alert] = "Invalid email or password"
-        redirect_to root_url 
+        flash[:alert] = "Invalid email or password"
+        redirect_to new_session_path
       end
     end
   end
 
   def destroy
-    flash[:secondary] = "Logged out"
+    flash[:success] = "Logged out"
     log_out if logged_in?
     redirect_to root_url
   end

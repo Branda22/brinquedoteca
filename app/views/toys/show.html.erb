@@ -1,2 +1,27 @@
-<h1>Toys#show</h1>
-<p>Find me in app/views/toys/show.html.erb</p>
+<div class="row">
+    <div class="small-6 large-centered columns">
+        <h1><%= @toy.manufacturer %> <%= @toy.name %></h1>
+        <table>
+            <thead>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= image_tag @toy.image.url %></td>
+                    <td><%= @toy.name %></td>
+                    <td><%= @toy.manufacturer %></td>
+                    <td><%= @toy.category %></td>
+                </tr>
+            </tbody>
+        </table>
+        <%= link_to "edit toy", edit_user_toy_path(current_user, @toy), class: "button tiny" %>
+        <%= link_to "delete toy", user_toy_path(current_user, @toy), method: :delete, class: "button alert tiny" %>
+    </div>
+</div>
+
+
+
+
