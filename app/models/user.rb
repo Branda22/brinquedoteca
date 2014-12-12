@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     before_save { self.email = email.downcase }
-    after_save :user_notification
+    #after_save :user_notification
     
     has_many :toys
     validates :name, presence: true, length: { minimum: 3 }
