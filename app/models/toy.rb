@@ -5,7 +5,7 @@ class Toy < ActiveRecord::Base
     validates :category, presence: true
     
     #Used for image upload | thoughtbot/paperclip gem. 
-    has_attached_file :image
+    has_attached_file :image, :bucket  => ENV['brinquedotecaphotos']
     
     #image upload validations.
     validates_attachment :image, :less_than => 5.megabytes, presence: true, 
