@@ -11,8 +11,11 @@ class ToysController < ApplicationController
     if @toy.save
       flash[:success] = "Toy created!"
       redirect_to user_toy_path(current_user, @toy)
+    else
+      flash[:alert] = "Something went wrong, try again"
+      redirect_to new_user_toy_path(current_user)
     end
-  end
+  end 
 
   def show
     #Gets a toy to display in the show page.
