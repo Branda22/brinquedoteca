@@ -1,4 +1,4 @@
-<div class="fixed">
+<div class="contain-to-grid">
     <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
             <li class="name">
@@ -8,9 +8,14 @@
         <section class="top-bar-section">
             <ul class="right">
                 <% if logged_in? %>
-                <%= link_to "Profile", user_path(current_user), class: "button" %>
-                <%= link_to "Settings", edit_user_path(current_user), class: 'button' %>
-                <%= link_to "Toy index", user_toys_path(current_user), class: 'button' %>
+                <li class="has-dropdown">
+                    <%= link_to "Menu", "#" %>
+                    <ul class="dropdown">
+                        <%= link_to "Profile", user_path(current_user), class: "active" %>
+                        <%= link_to "Settings", edit_user_path(current_user) %>
+                        <%= link_to "Toy index", user_toys_path(current_user) %>
+                    </ul>
+                </li>
                 <%= link_to "log out", log_out_path, class: "button alert" %>
                 <% end %>
             </ul>
