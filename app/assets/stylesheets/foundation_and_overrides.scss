@@ -79,7 +79,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
+$row-width: rem-calc(1200);
 // $total-columns: 12;
 // $column-gutter: rem-calc(30);
 
@@ -1358,7 +1358,7 @@ $include-html-global-classes: $include-html-classes;
 // 34. Top Bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-html-top-bar-classes: $include-html-classes;
+//$include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
 $topbar-bg-color: #1c5b6b;
@@ -1370,7 +1370,7 @@ $topbar-height: 60px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-font-size: rem-calc(19);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
@@ -1401,7 +1401,7 @@ $topbar-height: 60px;
 // $topbar-link-dropdown-padding: 20px;
 
 // $topbar-button-font-size: 0.75rem;
-// $topbar-button-top: 7px;
+$topbar-button-top: 14px;
 
 // $topbar-dropdown-label-color: $monsoon;
 // $topbar-dropdown-label-text-transform: uppercase;
@@ -1462,5 +1462,9 @@ $topbar-height: 60px;
 #tiny {
     padding-top: 2px;
     font-size: 10px;
+}
+
+.top-spacing {
+    padding-top: 10px;
 }
 @import 'foundation';
