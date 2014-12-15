@@ -4,14 +4,16 @@
             <li class="name">
               <h1 id="bar-title"><%= link_to "Brinquedoteca", root_path %></h1>
             </li>
+            <% if logged_in? %>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
         <section class="top-bar-section">
             <ul class="right">
-                <% if logged_in? %>
+                
                 <li class="has-dropdown">
                     <%= link_to "Menu", "#" %>
                     <ul class="dropdown">
-                        <li class="active"><%= link_to "Profile", user_path(current_user) %></li>
+                        <li><%= link_to "Profile", user_path(current_user) %></li>
                         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                         <li><%= link_to "Toy index", user_toys_path(current_user) %></li>
                     </ul>
