@@ -7,15 +7,14 @@
             <% if logged_in? %>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-        <section class="top-bar-section">
-            <ul class="right">
+            <ul class="right button-group">
+                <li><%= link_to "Add toy", new_user_toy_path(current_user), class: "button" %></li>
                 <li><%= link_to "Profile", user_path(current_user), class: "button" %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user), class: "button" %></li>
                 <li><%= link_to "Toy index", user_toys_path(current_user), class: "button" %></li>
-                <li><%= link_to "User index", users_path, class: "button" %></li>
+                <li><%= link_to "Users index", users_path, class: "button" %></li>
                 <li><%= link_to "log out", log_out_path, class: "button alert" %></li>
                 <% end %>
             </ul>
-        </section>
     </nav>
 </div>
