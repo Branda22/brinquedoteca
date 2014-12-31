@@ -1473,7 +1473,7 @@ $topbar-button-top: 14px;
     padding: 0;
 	width: 100%;
 	height: 450px;
-	background: url('<%= asset_path("background.jpg") %>');
+	background: url("https://s3.amazonaws.com/toyphotos/background.jpg");
 	background-size: cover;
 }
 
